@@ -3,12 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Bozze Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a; /* Nero quasi assoluto */
+            color: #ffc107; /* Giallo acceso */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Fa sì che la pagina occupi tutta l'altezza dello schermo */
+            padding: 20px;
+            box-sizing: border-box; /* Include padding nel calcolo di width/height */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3.5em; /* Grande titolo */
+            color: #ffeb3b; /* Giallo più brillante per il titolo */
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombra leggera */
+            margin-bottom: 10px;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap; /* Permette ai link di andare a capo su schermi piccoli */
+            gap: 25px; /* Spazio tra i bottoni */
+            justify-content: center;
+        }
+
+        nav a {
+            background-color: #ffc107; /* Sfondo giallo per i bottoni */
+            color: #1a1a1a; /* Testo nero sui bottoni gialli */
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px; /* Bordi arrotondati */
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombra ai bottoni */
+        }
+
+        nav a:hover {
+            background-color: #ffeb3b; /* Giallo più chiaro al passaggio del mouse */
+            color: #000000; /* Nero puro al passaggio del mouse */
+            transform: translateY(-3px); /* Effetto leggero di sollevamento */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Stili per schermi più piccoli */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+                letter-spacing: 3px;
+            }
+            nav {
+                flex-direction: column; /* Impila i bottoni verticalmente */
+                align-items: center;
+            }
+            nav a {
+                width: 80%; /* I bottoni occupano più larghezza su mobile */
+                max-width: 300px;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-        <h1>I miei progetti</h1>
+        <h1>Bozze</h1>
         <nav>
             <a href="stile1/index.html" target="_blank">Progetto 1</a>
             <a href="stile2/index.html" target="_blank">Progetto 2</a>
