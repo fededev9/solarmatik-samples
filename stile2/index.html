@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solarmatik | Progettazione, Pulizia e Manutenzione di Impianti Fotovoltaici</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.solarmatik.it/wp-content/uploads/2019/02/cropped-energia-innovazione-icon-32x32.jpg" sizes="32x32">
+    <link rel="apple-touch-icon" href="https://www.solarmatik.it/wp-content/uploads/2019/02/cropped-energia-innovazione-icon-180x180.jpg">
+    <meta name="msapplication-TileImage" content="https://www.solarmatik.it/wp-content/uploads/2019/02/cropped-energia-innovazione-icon-270x270.jpg">
+    <style>
+        :root {
+            --primary-color: #000;
+            --secondary-color: #ffa700;
+            --text-color: #f4f4f4;
+            --bg-color: #1a1a1a;
+            --light-bg: #2d2d2d;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        /* Menu di Navigazione Fisso */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar-nav li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        .navbar-nav li a:hover {
+            color: var(--secondary-color);
+        }
+
+        header.hero {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstaticgeopop.akamaized.net%2Fwp-content%2Fuploads%2Fsites%2F32%2F2022%2F10%2Fpannelli-solari-fotovoltaici.jpg&f=1&nofb=1&ipt=b843313c0ded0be4eab8dee57102e0dc7634f3205cd2a18bb57e1800167b23b8') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .hero-content {
+            z-index: 2;
+            padding: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero-content h1 {
+            font-size: 3em;
+            font-weight: 900;
+            margin: 0;
+            line-height: 1;
+        }
+        .hero-content p {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-top: 5px;
+        }
+
+        /* Effetto Trasparenza */
+        .fade-block {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-block.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section {
+            background-color: var(--primary-color);
+            padding: 40px 0;
+        }
+        .section-light {
+            background-color: var(--light-bg);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        /* Servizi */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .service-card {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .service-card h3 {
+            color: var(--secondary-color);
+            font-size: 1.5em;
+            margin: 0 0 10px;
+        }
+        .service-card p {
+            font-size: 0.9em;
+        }
+
+        /* Vantaggi Fiscali */
+        .vantaggi-fiscali {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .vantaggi-block {
+            background-color: var(--light-bg);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease;
+        }
+        .vantaggi-block:hover {
+            background-color: #262626;
+        }
+        .vantaggi-block h4 {
+            font-size: 1.5em;
+            color: var(--secondary-color);
+            margin: 0 0 10px;
+        }
+
+        /* Galleria */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+        }
+        .gallery-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            z-index: 5;
+        }
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .news-item {
+            background-color: var(--light-bg);
+            padding: 15px;
+            border-radius: 6px;
+            transition: box-shadow 0.3s ease;
+        }
+        .news-item:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        .news-item h4 {
+            font-size: 1.1em;
+            margin: 0 0 5px;
+        }
+        .news-item a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .news-item a:hover {
+            color: #ffc44d;
+        }
+        .news-item p {
+            font-size: 0.85em;
+            margin: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+        .footer-block {
+            flex: 1;
+        }
+        .footer-block p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 700;
+            font-size: 0.9em;
+        }
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        .footer-links br {
+            display: none;
+        }
+        .footer-links p {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .vantaggi-fiscali {
+                flex-direction: row;
+            }
+            .footer-content {
+                flex-direction: row;
+                text-align: left;
+                align-items: flex-start;
+            }
+            .footer-links p {
+                flex-direction: row;
+                gap: 10px;
+            }
+            .footer-links br {
+                display: initial;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#services">Servizi</a></li>
+            <li><a href="#vantaggi">Vantaggi Fiscali</a></li>
+            <li><a href="#gallery">Galleria</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#footer">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <header id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Solarmatik</h1>
+            <p>Pannelli fotovoltaici per privati e aziende</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="services" class="section fade-block">
+            <div class="container">
+                <h2 class="section-title">I nostri servizi</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Progettazione</h3>
+                        <p>La progettazione di un impianto fotovoltaico è la prima fase di un lavoro che porterà al guadagno dall'energia solare.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Pulizia</h3>
+                        <p>La pulizia dei pannelli solari è fondamentale per assicurarne una buona efficienza e rendimento energetico.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Manutenzione</h3>
+                        <p>I costi per la manutenzione di un impianto fotovoltaico sono minimi, ma fondamentali per la redditività dell'investimento.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Soluzioni</h3>
+                        <p>Offriamo una vasta gamma di soluzioni fotovoltaiche personalizzate per ogni esigenza, sia per privati che aziende.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vantaggi" class="section section-light fade-block">
+            <div class="container vantaggi-fiscali">
+                <h2 class="section-title">Vantaggi Fiscali</h2>
+                <div class="vantaggi-block">
+                    <h4>Per Privati</h4>
+                    <p>Installare un impianto fotovoltaico a casa significa guadagnare dall'energia solare, riducendo le bollette e approfittando di incentivi fiscali dedicati.</p>
+                </div>
+                <div class="vantaggi-block">
+                    <h4>Per Aziende</h4>
+                    <p>Ridurre i costi energetici e aumentare la competitività. I vantaggi fiscali per le aziende che investono nel fotovoltaico sono un'opportunità di crescita sostenibile.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section fade-block">
+            <div class="container">
+                <h2 class="section-title">La nostra Galleria</h2>
+                <div class="gallery-grid">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/energia-innovazione-header-1-150x150.jpg" alt="Galleria 1">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/7a2af3dd-1f6d-4658-9c09-8e8aaf95019d-150x150.jpg" alt="Galleria 2">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/09524040-33f5-4c4b-98d3-0930cb3c6dd2-150x150.jpg" alt="Galleria 3">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/c217da61-1a61-47aa-b5bb-d8b234ade6c2-150x150.jpg" alt="Galleria 4">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/vantaggio-fiscale-150x150.jpg" alt="Galleria 5">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/casa-150x150.jpg" alt="Galleria 6">
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="section section-light fade-block">
+            <div class="container">
+                <h2 class="section-title">Ultime News</h2>
+                <div class="news-grid">
+                    <div class="news-item">
+                        <h4><a href="https://www.ansa.it/canale_ambiente/notizie/animali/2023/05/30/la-lontra-dopo-decenni-sta-tornando-in-nord-italia_970d4436-7756-4157-b826-050ffe2b31b8.html">La lontra dopo decenni sta tornando in Nord Italia</a></h4>
+                        <p>Il 31 maggio Giornata mondiale, la specie resta vulnerabile.</p>
+                    </div>
+                    <div class="news-item">
+                        <h4><a href="https://www.ansa.it/canale_ambiente/notizie/rifiuti_e_riciclo/2023/05/30/vola-in-italia-il-riciclo-delle-bioplastiche-compostabili_ee921c9a-0dc2-4114-ae22-d0069a634a5d.html">Vola in Italia il riciclo delle bioplastiche compostabili</a></h4>
+                        <p>Biorepack, superato l'obiettivo per il 2030. Valle d'Aosta prima.</p>
+                    </div>
+                    <div class="news-item">
+                        <h4><a href="https://www.ansa.it/canale_ambiente/notizie/energia/2023/05/30/urso-spostare-i-fondi-del-pnrr-sulle-materie-prime-critiche_bf06ea48-a2c2-4392-82de-e581c5adf9b8.html">Urso, spostare i fondi del Pnrr sulle materie prime critiche</a></h4>
+                        <p>'Senza autonomia passiamo a dipendere dalla Russia alla Cina'.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer fade-block">
+        <div class="footer-content container">
+            <div class="footer-block">
+                <p><strong>Solarmatik srl</strong></p>
+                <p>P.IVA 044406730269</p>
+            </div>
+            <div class="footer-block">
+                <p>Sede legale e operativa:</p>
+                <p>Via Conegliano 96/45 - Susegana</p>
+            </div>
+            <div class="footer-block footer-links">
+                <p>Contatti:<br>
+                    <a href="mailto:commerciale@energiainnovazione.com">commerciale</a> |
+                    <a href="mailto:amministrazione@energiainnovazione.com">amministrazione</a> |
+                    <a href="mailto:tecnico@energiainnovazione.com">ufficio tecnico</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeBlocks = document.querySelectorAll('.fade-block');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            fadeBlocks.forEach(block => {
+                observer.observe(block);
+            });
+        });
+    </script>
+
+</body>
+</html>

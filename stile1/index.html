@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solarmatik | Progettazione, Pulizia e Manutenzione di Impianti Fotovoltaici</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.solarmatik.it/wp-content/uploads/2019/02/cropped-energia-innovazione-icon-32x32.jpg" sizes="32x32">
+    <link rel="apple-touch-icon" href="https://www.solarmatik.it/wp-content/uploads/2019/02/cropped-energia-innovazione-icon-180x180.jpg">
+    <meta name="msapplication-TileImage" content="https://www.solarmatik.it/wp-content/uploads/2019/02/cropped-energia-innovazione-icon-270x270.jpg">
+    <style>
+        :root {
+            --primary-color: #000;
+            --secondary-color: #ffa700;
+            --text-color: #333;
+            --bg-color: #f4f4f4;
+            --light-bg: #fff;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstaticgeopop.akamaized.net%2Fwp-content%2Fuploads%2Fsites%2F32%2F2022%2F10%2Fpannelli-solari-fotovoltaici.jpg&f=1&nofb=1&ipt=b843313c0ded0be4eab8dee57102e0dc7634f3205cd2a18bb57e1800167b23b8') no-repeat center center/cover;
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .header-content {
+            width: 90%; 
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .header p {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar-nav li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 12px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        .navbar-nav li a:hover {
+            background-color: var(--secondary-color);
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--primary-color);
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            min-width: 150px;
+            z-index: 10;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu a {
+            padding: 10px 15px;
+        }
+        
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 10px;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .main-area {
+            flex: 2;
+        }
+        .sidebar {
+            flex: 1;
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            font-size: 2em;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+        
+        .article {
+            background-color: var(--light-bg);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .article img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .article-body h3 {
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        .article-body h3 a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .article-body h3 a:hover {
+            color: var(--secondary-color);
+        }
+        .read-more-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .widget {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .widget-title {
+            text-align: center;
+            font-size: 1.2em;
+            color: var(--primary-color);
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .widget-content {
+            margin-top: 15px;
+        }
+        .rss-feed li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+        .rss-feed a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        .rss-feed a:hover {
+            text-decoration: underline;
+        }
+        .category-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .category-list li a {
+            background-color: #eee;
+            padding: 8px 12px;
+            border-radius: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .footer-block {
+            flex: 1;
+        }
+        .footer-block p {
+            margin: 5px 0;
+        }
+        .contact-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Media Queries per desktop */
+        @media (min-width: 768px) {
+            .main-content {
+                flex-direction: row;
+            }
+            .article {
+                flex-direction: row;
+                text-align: left;
+                align-items: flex-start;
+            }
+            .article img {
+                width: 40%;
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+            .sidebar {
+                order: 1;
+            }
+            .main-area {
+                order: 0;
+            }
+            .footer-content {
+                flex-direction: row;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>Solarmatik</h1>
+            <p>Pannelli fotovoltaici per privati e aziende</p>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">La nostra Storia</a></li>
+            <li><a href="#">Contatti</a></li>
+            <li><a href="#">Soluzioni</a></li>
+            <li><a href="#">Progettazione</a></li>
+            <li><a href="#">Pulizia</a></li>
+            <li><a href="#">Manutenzione</a></li>
+            <li class="dropdown">
+                <a href="#">Vantaggi Fiscali</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Privati</a></li>
+                    <li><a href="#">Aziende</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container main-content">
+        <section class="main-area">
+            <h2 class="section-title">I nostri servizi</h2>
+            
+            <article class="article">
+                <img src="https://www.solarmatik.it/wp-content/uploads/2019/03/Progettazione-min-540x304.jpg" alt="PROGETTAZIONE">
+                <div class="article-body">
+                    <h3><a href="#">Progettazione</a></h3>
+                    <p>La progettazione di un impianto fotovoltaico è la prima fase di un lavoro che porterà al guadagno dall'energia solare. Un...</p>
+                    <a href="#" class="read-more-link">Continua a leggere</a>
+                </div>
+            </article>
+            
+            <article class="article">
+                <img src="https://www.solarmatik.it/wp-content/uploads/2019/03/sistemi-pulizia-pannelli-solari-540x304.jpg" alt="PULIZIA">
+                <div class="article-body">
+                    <h3><a href="#">Pulizia</a></h3>
+                    <p>La pulizia dei pannelli solari è fondamentale per assicurarne una buona efficienza e rendimento energetico...</p>
+                    <a href="#" class="read-more-link">Continua a leggere</a>
+                </div>
+            </article>
+
+            <article class="article">
+                <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/casa-540x304.jpg" alt="SEI UN PRIVATO">
+                <div class="article-body">
+                    <h3><a href="#">Vantaggi fiscali per privati</a></h3>
+                    <p>Perché installare un impianto fotovoltaico a casa? Installare un impianto fotovoltaico, anche piccolo e commisurato...</p>
+                    <a href="#" class="read-more-link">Continua a leggere</a>
+                </div>
+            </article>
+
+            <article class="article">
+                <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/vantaggio-fiscale-540x304.jpg" alt="SEI UNA AZIENDA">
+                <div class="article-body">
+                    <h3><a href="#">Vantaggi fiscali per aziende</a></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis...</p>
+                    <a href="#" class="read-more-link">Continua a leggere</a>
+                </div>
+            </article>
+
+            <article class="article">
+                <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/c217da61-1a61-47aa-b5bb-d8b234ade6c2-540x304.jpg" alt="MANUTENZIONE">
+                <div class="article-body">
+                    <h3><a href="#">Manutenzione</a></h3>
+                    <p>Quanto la manutenzione del fotovoltaico incide sulla redditività dell’investimento? I costi per la manutenzione...</p>
+                    <a href="#" class="read-more-link">Continua a leggere</a>
+                </div>
+            </article>
+
+            <article class="article">
+                <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/09524040-33f5-4c4b-98d3-0930cb3c6dd2.jpg" alt="SOLUZIONI">
+                <div class="article-body">
+                    <h3><a href="#">Soluzioni</a></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa...</p>
+                    <a href="#" class="read-more-link">Continua a leggere</a>
+                </div>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">Quanto potresti guadagnare?</h3>
+                <div class="widget-content">
+                    <iframe src="https://portali.3bmeteo.com/3bm_meteo.php?idreg=20&tm=msmall&new=1&c1=ffffff&b1=93c1db&b2=3a8ebd" width="100%" height="300" frameborder="0"></iframe>
+                    <a href="https://www.3bmeteo.com/meteo/veneto" class="widget-link">Meteo Veneto</a>
+                </div>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-title">News Recenti</h3>
+                <ul class="widget-content rss-feed">
+                    <li><a href="https://www.ansa.it/canale_ambiente/notizie/animali/2023/05/30/la-lontra-dopo-decenni-sta-tornando-in-nord-italia_970d4436-7756-4157-b826-050ffe2b31b8.html">La lontra dopo decenni sta tornando in Nord Italia</a></li>
+                    <li><a href="https://www.ansa.it/canale_ambiente/notizie/rifiuti_e_riciclo/2023/05/30/vola-in-italia-il-riciclo-delle-bioplastiche-compostabili_ee921c9a-0dc2-4114-ae22-d0069a634a5d.html">Vola in Italia il riciclo delle bioplastiche compostabili</a></li>
+                    <li><a href="https://www.ansa.it/canale_ambiente/notizie/energia/2023/05/30/urso-spostare-i-fondi-del-pnrr-sulle-materie-prime-critiche_bf06ea48-a2c2-4392-82de-e581c5adf9b8.html">Urso, spostare i fondi del Pnrr sulle materie prime critiche</a></li>
+                </ul>
+            </div>
+            
+            <div class="widget">
+                <h3 class="widget-title">Blog:</h3>
+                <ul class="widget-content category-list">
+                    <li><a href="#">fiscalità azienda</a></li>
+                    <li><a href="#">fotovoltaico</a></li>
+                    <li><a href="#">manutenzione</a></li>
+                    <li><a href="#">privato</a></li>
+                    <li><a href="#">progettazione</a></li>
+                    <li><a href="#">pulizia</a></li>
+                </ul>
+            </div>
+            
+            <div class="widget">
+                <h3 class="widget-title">Galleria</h3>
+                <div class="widget-content gallery">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/energia-innovazione-header-1-150x150.jpg" alt="Galleria 1">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/7a2af3dd-1f6d-4658-9c09-8e8aaf95019d-150x150.jpg" alt="Galleria 2">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/09524040-33f5-4c4b-98d3-0930cb3c6dd2-150x150.jpg" alt="Galleria 3">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/c217da61-1a61-47aa-b5bb-d8b234ade6c2-150x150.jpg" alt="Galleria 4">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/vantaggio-fiscale-150x150.jpg" alt="Galleria 5">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/casa-150x150.jpg" alt="Galleria 6">
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-block">
+                <p><strong>Solarmatik srl</strong></p>
+                <p>P.IVA 044406730269</p>
+            </div>
+            <div class="footer-block">
+                <p>Sede legale e operativa:</p>
+                <p>Via Conegliano 96/45 - Susegana</p>
+            </div>
+            <div class="footer-block contact-links">
+                <p>Contatti:</p>
+                <p>
+                    <a href="mailto:commerciale@energiainnovazione.com">commerciale</a><br>
+                    <a href="mailto:amministrazione@energiainnovazione.com">amministrazione</a><br>
+                    <a href="mailto:tecnico@energiainnovazione.com">ufficio tecnico</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

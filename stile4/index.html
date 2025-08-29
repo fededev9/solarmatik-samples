@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solarmatik | Energia Pulita e Innovazione</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.solarmatik.it/wp-content/uploads/2019/02/cropped-energia-innovazione-icon-32x32.jpg" sizes="32x32">
+    <link rel="apple-touch-icon" href="https://www.solarmatik.it/wp-content/uploads/2019/02/cropped-energia-innovazione-icon-180x180.jpg">
+    <meta name="msapplication-TileImage" content="https://www.solarmatik.it/wp-content/uploads/2019/02/cropped-energia-innovazione-icon-270x270.jpg">
+    <style>
+        :root {
+            --primary-color: #ffffff; /* Bianco dominante */
+            --secondary-color: #ffa700; /* Arancione brillante */
+            --text-dark: #333333;
+            --text-light: #666666;
+            --background-light: #f9f9f9; /* Leggera sfumatura di bianco */
+            --border-light: #e0e0e0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            background-color: var(--primary-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
+        
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar-nav li a {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            font-weight: 600;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            border-radius: 5px;
+        }
+        .navbar-nav li a:hover {
+            color: var(--secondary-color);
+            background-color: rgba(255, 167, 0, 0.1);
+        }
+
+        /* Header Section */
+        header.hero {
+            background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstaticgeopop.akamaized.net%2Fwp-content%2Fuploads%2Fsites%2F32%2F2022%2F10%2Fpannelli-solari-fotovoltaici.jpg&f=1&nofb=1&ipt=b843313c0ded0be4eab8dee57102e0dc7634f3205cd2a18bb57e1800167b23b8');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            /* Aggiunta del filtro grigio semitrasparente */
+            background-color: rgba(0, 0, 0, 0.4); 
+            background-blend-mode: overlay;
+        }
+        .hero-content {
+            z-index: 2;
+            padding: 40px;
+            max-width: 900px;
+            /* Aggiunta dell'ombra al testo per renderlo più leggibile */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.8em;
+            font-weight: 700;
+            margin: 0 0 15px;
+            line-height: 1.2;
+            /* Colore del titolo cambiato in bianco per maggior contrasto */
+            color: var(--primary-color); 
+        }
+        .hero-content p {
+            font-size: 1.3em;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 167, 0, 0.3);
+        }
+        .cta-button:hover {
+            background-color: #e69500;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 167, 0, 0.4);
+        }
+
+        /* Sezioni Generali */
+        .section {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .section-light {
+            background-color: var(--background-light); /* Sfondo leggermente grigio */
+        }
+        .section:last-of-type {
+            border-bottom: none;
+        }
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        /* Servizi */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background-color: var(--primary-color);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-color: var(--secondary-color);
+        }
+        .service-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--secondary-color);
+            font-size: 1.7em;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            font-size: 1em;
+            color: var(--text-light);
+        }
+
+        /* Vantaggi Fiscali */
+        .vantaggi-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        .vantaggi-block {
+            background-color: var(--primary-color);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--secondary-color);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .vantaggi-block:hover {
+            background-color: var(--background-light);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        .vantaggi-block h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .vantaggi-block p {
+            font-size: 1em;
+            color: var(--text-dark);
+        }
+
+        /* Galleria */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        .gallery-grid img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-color: var(--secondary-color);
+        }
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .news-item {
+            background-color: var(--primary-color);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .news-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        .news-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3em;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .news-item a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .news-item a:hover {
+            color: #e69500;
+            text-decoration: underline;
+        }
+        .news-item p {
+            font-size: 0.95em;
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-light);
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+        .footer-block {
+            flex: 1;
+        }
+        .footer-block p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: var(--text-light);
+        }
+        .footer-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        @media (min-width: 768px) {
+            .hero-content h1 {
+                font-size: 4.5em;
+            }
+            .vantaggi-layout {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-content {
+                flex-direction: row;
+                text-align: left;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <ul class="navbar-nav">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Servizi</a></li>
+                <li><a href="#vantaggi">Vantaggi Fiscali</a></li>
+                <li><a href="#gallery">Galleria</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#footer">Contatti</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero">
+        <div class="hero-content container">
+            <h1>Solarmatik: Accendi il Tuo Futuro con l'Energia Solare</h1>
+            <p>Innovazione, affidabilità e sostenibilità per i tuoi impianti fotovoltaici. Soluzioni su misura per privati e aziende.</p>
+            <a href="#services" class="cta-button">Scopri di più</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title">I Nostri Servizi</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Progettazione Intelligente</h3>
+                        <p>Dallo studio di fattibilità alla realizzazione, garantiamo un sistema ottimizzato per le tue esigenze energetiche.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Pulizia e Efficienza</h3>
+                        <p>Servizi professionali di pulizia per massimizzare il rendimento dei tuoi pannelli fotovoltaici.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Manutenzione Completa</h3>
+                        <p>Piani di manutenzione preventiva e correttiva per assicurare la lunga vita e l'efficacia del tuo impianto.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Soluzioni Integrate</h3>
+                        <p>Sistemi fotovoltaici completi, con accumulo e monitoraggio, per una gestione energetica autonoma e smart.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vantaggi" class="section section-light">
+            <div class="container">
+                <h2 class="section-title">Vantaggi e Incentivi</h2>
+                <div class="vantaggi-layout">
+                    <div class="vantaggi-block">
+                        <h4>Per la Tua Casa</h4>
+                        <p>Riduci drasticamente i costi delle bollette e contribuisci alla tutela dell'ambiente, sfruttando le agevolazioni fiscali dedicate ai privati.</p>
+                    </div>
+                    <div class="vantaggi-block">
+                        <h4>Per la Tua Azienda</h4>
+                        <p>Ottimizza le spese energetiche, migliora la tua reputazione green e accedi a incentivi specifici per le imprese che investono nel fotovoltaico.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2 class="section-title">Le Nostre Realizzazioni</h2>
+                <div class="gallery-grid">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/energia-innovazione-header-1-150x150.jpg" alt="Impianto Solarmatik 1">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/7a2af3dd-1f6d-4658-9c09-8e8aaf95019d-150x150.jpg" alt="Impianto Solarmatik 2">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/09524040-33f5-4c4b-98d3-0930cb3c6dd2-150x150.jpg" alt="Impianto Solarmatik 3">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/c217da61-1a61-47aa-b5bb-d8b234ade6c2-150x150.jpg" alt="Impianto Solarmatik 4">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/vantaggio-fiscale-150x150.jpg" alt="Impianto Solarmatik 5">
+                    <img src="https://www.solarmatik.it/wp-content/uploads/2019/02/casa-150x150.jpg" alt="Impianto Solarmatik 6">
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="section section-light">
+            <div class="container">
+                <h2 class="section-title">Notizie e Aggiornamenti</h2>
+                <div class="news-grid">
+                    <div class="news-item">
+                        <h4><a href="https://www.ansa.it/canale_ambiente/notizie/animali/2023/05/30/la-lontra-dopo-decenni-sta-tornando-in-nord-italia_970d4436-7756-4157-b826-050ffe2b31b8.html">Il ritorno delle lontre: un segnale per l'ambiente</a></h4>
+                        <p>La presenza di questi animali indica ecosistemi più sani e puliti, un buon auspicio per la natura italiana.</p>
+                    </div>
+                    <div class="news-item">
+                        <h4><a href="https://www.ansa.it/canale_ambiente/notizie/rifiuti_e_riciclo/2023/05/30/vola-in-italia-il-riciclo-delle-bioplastiche-compostabili_ee921c9a-0dc2-4114-ae22-d0069a634a5d.html">L'italia eccelle nel riciclo delle bioplastiche</a></h4>
+                        <p>Un traguardo importante che sottolinea l'impegno del paese verso un'economia circolare e meno impattante.</p>
+                    </div>
+                    <div class="news-item">
+                        <h4><a href="https://www.ansa.it/canale_ambiente/notizie/energia/2023/05/30/urso-spostare-i-fondi-del-pnrr-sulle-materie-prime-critiche_bf06ea48-a2c2-4392-82de-e581c5adf9b8.html">PNRR e Materie Prime Critiche: Nuove Prospettive</a></h4>
+                        <p>Strategie per rafforzare l'indipendenza energetica e la sicurezza nell'approvvigionamento delle risorse.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-content container">
+            <div class="footer-block">
+                <p><strong>Solarmatik srl</strong></p>
+                <p>P.IVA 044406730269</p>
+                <p>Via Conegliano 96/45 - Susegana, Milano, Italia</p>
+            </div>
+            <div class="footer-block">
+                <p>Contatti:</p>
+                <p class="footer-links">
+                    <a href="mailto:commerciale@energiainnovazione.com">Commerciale</a><br>
+                    <a href="mailto:amministrazione@energiainnovazione.com">Amministrazione</a><br>
+                    <a href="mailto:tecnico@energiainnovazione.com">Ufficio Tecnico</a>
+                </p>
+            </div>
+            <div class="footer-block">
+                <p>&copy; 2023 Solarmatik. Tutti i diritti riservati.</p>
+                <p>Il Futuro è Solare.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
